@@ -21,7 +21,10 @@ public class MotivaatiovalasAppWidgetProvider extends AppWidgetProvider {
 			R.drawable.motivaatiovalas6,
 			R.drawable.motivaatiovalas7,
 			R.drawable.motivaatiovalas8,
-			R.drawable.motivaatiovalas9};
+			R.drawable.motivaatiovalas9,
+			R.drawable.motivaatiovalas10,
+			R.drawable.motivaatiovalas11,
+			R.drawable.motivaatiovalas12};
 	
 	public void onUpdate(Context context, AppWidgetManager manager, int[] appWidgetIds) {
 		

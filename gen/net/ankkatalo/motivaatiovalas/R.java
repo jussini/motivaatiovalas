@@ -15,15 +15,18 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
         public static final int motivaatiovalas=0x7f020002;
         public static final int motivaatiovalas1=0x7f020003;
-        public static final int motivaatiovalas2=0x7f020004;
-        public static final int motivaatiovalas3=0x7f020005;
-        public static final int motivaatiovalas4=0x7f020006;
-        public static final int motivaatiovalas5=0x7f020007;
-        public static final int motivaatiovalas6=0x7f020008;
-        public static final int motivaatiovalas7=0x7f020009;
-        public static final int motivaatiovalas8=0x7f02000a;
-        public static final int motivaatiovalas9=0x7f02000b;
-        public static final int motivaatiovalas_empty=0x7f02000c;
+        public static final int motivaatiovalas10=0x7f020004;
+        public static final int motivaatiovalas11=0x7f020005;
+        public static final int motivaatiovalas12=0x7f020006;
+        public static final int motivaatiovalas2=0x7f020007;
+        public static final int motivaatiovalas3=0x7f020008;
+        public static final int motivaatiovalas4=0x7f020009;
+        public static final int motivaatiovalas5=0x7f02000a;
+        public static final int motivaatiovalas6=0x7f02000b;
+        public static final int motivaatiovalas7=0x7f02000c;
+        public static final int motivaatiovalas8=0x7f02000d;
+        public static final int motivaatiovalas9=0x7f02000e;
+        public static final int motivaatiovalas_empty=0x7f02000f;
     }
     public static final class id {
         public static final int imageView1=0x7f060000;
