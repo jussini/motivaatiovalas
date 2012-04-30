@@ -28,7 +28,9 @@ public class MotivaatiovalasAppWidgetProvider extends AppWidgetProvider {
 			R.drawable.motivaatiovalas9,
 			R.drawable.motivaatiovalas10,
 			R.drawable.motivaatiovalas11,
-			R.drawable.motivaatiovalas12};
+			R.drawable.motivaatiovalas12,
+			R.drawable.motivaatiovalas13,
+			R.drawable.motivaatiovalas14};
 
 	private static Set<Integer> m_activeAppWidgetIds = new HashSet<Integer>();
 
