@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="net.ankkatalo.motivaatiovalas" android:versionCode="1"
-	android:versionName="1.0">
+	package="net.ankkatalo.motivaatiovalas" android:versionCode="2012181"
+	android:versionName="2012-18.1">
 
 	<uses-sdk 
 	    android:targetSdkVersion="15" 
