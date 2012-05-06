@@ -3,15 +3,13 @@
     android:minWidth="250dp"
     android:minHeight="110dp"
     android:minResizeWidth="110dp"
-    android:minResizeHeight="55dp"
-    
+    android:minResizeHeight="40dp"
+    android:previewImage="@drawable/preview"
     android:updatePeriodMillis="3600000"
     android:resizeMode="horizontal|vertical"    
     android:initialLayout="@layout/main" >
 </appwidget-provider>
 
-<!--     android:updatePeriodMillis="86400000"
- -->
 <!--     android:configure="com.example.android.ExampleAppWidgetConfigure"  -->
-<!--     android:previewImage="@drawable/preview" -->
+<!--      -->
 <!--  -->
