@@ -90,17 +90,18 @@ public class MotivaatiovalasAppWidgetProvider extends AppWidgetProvider {
 		Intent intent = new Intent(context, MotivaatiovalasAppWidgetProvider.class);
 	
 		intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+		//intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
 		intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
 		
 		            
 		PendingIntent pendingIntent = PendingIntent.getBroadcast(context,
 				0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-		views.setOnClickPendingIntent(R.id.imageView1, pendingIntent);
+		views.setOnClickPendingIntent(R.id.viewFlipper, pendingIntent);
 		
 		
 		// set a new random whale image to every widget
-//		for(int appWidgetId : m_activeAppWidgetIds) {
-		for(int appWidgetId : appWidgetIds) {
+		for(int appWidgetId : m_activeAppWidgetIds) {
+		//for(int appWidgetId : appWidgetIds) {
 			int i = r.nextInt(numMessages);
 					
 			//views.setImageViewResource(R.id.imageView1, messages[i]);						
