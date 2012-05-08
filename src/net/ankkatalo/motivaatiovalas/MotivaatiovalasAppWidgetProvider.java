@@ -34,62 +34,50 @@ public class MotivaatiovalasAppWidgetProvider extends AppWidgetProvider {
 
 	private static Set<Integer> m_activeAppWidgetIds = new HashSet<Integer>();
 
-	public MotivaatiovalasAppWidgetProvider() {
-		super();		
-		Log.v(TAG, "Constructor");
-	}
-	
-	public void onDeleted(Context context, int[] appWidgetIds) {
-		super.onDeleted(context, appWidgetIds);
-		Log.v(TAG, "onDeleted");
-		for (int appWidgetId : appWidgetIds) {
-			Log.v(TAG, String.format("onDeleted %d", appWidgetId));
-			m_activeAppWidgetIds.remove(new Integer(appWidgetId));
-		}
 
+	public void onDeleted(Context context, int[] appWidgetIds) {
+		// remove all deleted widget ids from the list of known active ids
+		super.onDeleted(context, appWidgetIds);
+		for (int appWidgetId : appWidgetIds) {
+			m_activeAppWidgetIds.remove(Integer.valueOf(appWidgetId));
+		}
 	}
 	
 	public void onUpdate(Context context, AppWidgetManager manager, int[] appWidgetIds) {
 		
-		Log.v(TAG, "onUpdate");
 		
 		final int numMessages = messages.length;
 		
 		Random r = new Random();
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.main);
 		
-		for(int appWidgetId : appWidgetIds) {
-			
-			m_activeAppWidgetIds.add(new Integer(appWidgetId));
+		for(int appWidgetId : appWidgetIds) {			
+			m_activeAppWidgetIds.add(Integer.valueOf(appWidgetId));
 		}
-				
+
+		// create primitive integer array to use instead of appWidgetIds, because
+		// appWidgetIds may not always contain ids of all "active" widgets, thus not all of
+		// them will get updated
 		int[] widgetIds = new int[m_activeAppWidgetIds.size()];
 		for (int i = 0; i < m_activeAppWidgetIds.size(); ++i) {
 			widgetIds[i] = ((Integer)m_activeAppWidgetIds.toArray()[i]).intValue(); // pretty...			
 		}
 
-		for(int appWidgetId : appWidgetIds) {
-//		for(int appWidgetId : m_activeAppWidgetIds) {
-			
-			Log.v(TAG, String.format("onUpdate, inLoop: %d, %d", appWidgetId, m_activeAppWidgetIds.size()));
-						
-			// set a random whale image
+		// register an onClick listener to update view
+		Intent intent = new Intent(context, MotivaatiovalasAppWidgetProvider.class);
+	
+		intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+		intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, widgetIds);
+
+		PendingIntent pendingIntent = PendingIntent.getBroadcast(context,
+				0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+		views.setOnClickPendingIntent(R.id.imageView1, pendingIntent);
+				
+		// set a new random whale image to every widget
+		for(int appWidgetId : m_activeAppWidgetIds) {									
 			int i = r.nextInt(numMessages);		
-			views.setImageViewResource(R.id.imageView1, messages[i]);
-			
-			// register an onClick listener to update view
-			Intent intent = new Intent(context, MotivaatiovalasAppWidgetProvider.class);
-
-			intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
-//			intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
-			intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, widgetIds);
-
-			PendingIntent pendingIntent = PendingIntent.getBroadcast(context,
-					0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-			views.setOnClickPendingIntent(R.id.imageView1, pendingIntent);
-			
+			views.setImageViewResource(R.id.imageView1, messages[i]);						
 			manager.updateAppWidget(appWidgetId, views);			
 		}
-	}
-	
+	}	
 }
