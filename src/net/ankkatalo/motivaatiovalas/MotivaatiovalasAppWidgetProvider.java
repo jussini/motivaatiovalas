@@ -103,7 +103,8 @@ public class MotivaatiovalasAppWidgetProvider extends AppWidgetProvider {
 		for(int appWidgetId : appWidgetIds) {
 			int i = r.nextInt(numMessages);
 					
-			views.setImageViewResource(R.id.imageView1, messages[i]);						
+			//views.setImageViewResource(R.id.imageView1, messages[i]);						
+			views.showNext(R.id.viewFlipper);
 			manager.updateAppWidget(appWidgetId, views);			
 		}
 		
