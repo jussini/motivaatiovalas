@@ -1,0 +1,22 @@
+1. kyllä se siitä
+2. ei hätää, hei
+3. onnistuu se
+4. aina kannattaa yrittää
+5. paistaa se päivä risukasaankin
+6. kaikki menee paremmin kuin uskotkaan
+7. ota haaste vastaan
+8. tee se huvin vuoksi
+9. tälläkin pilvellä on hopeareunus
+10. anna palaa vaan
+11. ei se ota jos ei annakaan
+12. älä emmi enää
+13. onnetar suosii rohkeita
+14. päätä onnistua
+15. nuttu nurin, onni oikein
+16. pian on taas perjantai
+
+24 px Liberation Sans Bold, center align, antial, -1.0 letter spacing 
+vasen 363, pohja 100
+
+
+	
