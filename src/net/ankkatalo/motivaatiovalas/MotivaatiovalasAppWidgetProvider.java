@@ -9,9 +9,7 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.widget.RemoteViews;
-import android.widget.Toast;
 
 public class MotivaatiovalasAppWidgetProvider extends AppWidgetProvider {
 
@@ -56,6 +54,7 @@ public class MotivaatiovalasAppWidgetProvider extends AppWidgetProvider {
 		// api levels, we have different behavior for pre api 11 widgets
 		int sdk_int = android.os.Build.VERSION.SDK_INT ;
 		int threshold_int = android.os.Build.VERSION_CODES.HONEYCOMB;
+		//Log.d(TAG, String.format("running: %d, threshold: %d", sdk_int, threshold_int) );				
 		
 		// remote views for this provider
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.main);
