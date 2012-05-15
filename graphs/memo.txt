@@ -15,7 +15,11 @@
 15. nuttu nurin, onni oikein
 16. pian on taas perjantai
 
-24 px Liberation Sans Bold, center align, antial, -1.0 letter spacing 
+17. tänään hyvä päivä 
+
+24 px Arial bold tai
+24 px Liberation Sans Bold, 
+center align, antial, -1.0 letter spacing 
 vasen 363, pohja 100
 
 
